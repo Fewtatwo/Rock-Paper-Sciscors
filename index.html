@@ -11,9 +11,9 @@
 
     <script>
 
-        const plSelected = prompt("Choose Rock, Paper or Scissors","");
-        const playerSelection = plSelected.toUpperCase();
-        const computerSelection = getComputerChoice();
+        
+        let playerScore = 0;
+        let botScore = 0;   
            
         // Generate bot's choice
         function getComputerChoice() {
@@ -34,17 +34,37 @@
             }
         }
         
-        function compare(player,bot) {
+        function playround(player,bot) {
             if (player === bot) {
                 return "Player Selected: " + player + "\nBot Selected: " + bot + "\nROUND DRAW!!"; 
             } else if ((player === "PAPER" && bot === "ROCK") || (player === "ROCK" && bot === "SCISSORS") || (player === "SCISSORS" && bot === "PAPER")) {
+                playerScore++;
                 return "Player Selected: " + player + "\nBot Selected: " + bot + "\nPLAYER WON!!"; 
             } else {
+                botScore++;
                 return "Player Selected: " + player + "\nBot Selected: " + bot + "\nBOT WON!!"; 
             }
         } 
 
-        console.log(compare(playerSelection, computerSelection));
+        for (let i = 0; i < 5; i++) {
+            const plSelected = prompt("Choose Rock, Paper or Scissors","");
+            const playerSelection = plSelected.toUpperCase();
+            const computerSelection = getComputerChoice();
+            console.log(playround(playerSelection, computerSelection));
+            console.log("Player Score: " + playerScore);
+            console.log("Bot Score:" + botScore);
+        }
+        
+        if (playerScore > botScore) {
+            console.log("-------\n**GAME ENDED**\nPlayer Wins!!\n-------");
+        } else if (playerScore == botScore) {
+            console.log("-------\n**GAME ENDED**\nDraw!!\n-------");
+        } else {
+            console.log("-------\n**GAME ENDED**\nBot Wins!!\n-------");
+        }
+
+
+
 
     </script>
 
