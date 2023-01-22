@@ -1,2 +1,2 @@
-# Rock-Paper-Sciscors
-TOP Javascript Rock Paper Scicors
+# Rock-Paper-Scissors
+TOP Javascript Rock Paper Scissors
