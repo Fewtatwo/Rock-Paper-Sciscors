@@ -35,25 +35,17 @@
         }
         
         function compare(player,bot) {
-            if (player === "ROCK" && bot === "PAPER") {
-                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nBOT WINS!! - Paper beats Rock";
-            } else if (player === "ROCK" && bot === "SCISSORS") {
-                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nPLAYER WINS!! - Rock beats Scissors";
-            } else if (player === "PAPER" && bot === "ROCK") {
-                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nPLAYER WINS!! - Paper beats Rock";
-            } else if (player === "PAPER" && bot === "SCISSORS") {
-                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nBOT WINS!! - Scissors beats Paper";
-            } else if (player === "SCISSORS" && bot === "ROCK") {
-                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nBOT WINS!! - Rock beats Scissors";
-            } else if (player === "SCISSORS" && bot === "PAPER") {
-                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nPLAYER WINS!! - Scissors beats Paper";
+            if (player === bot) {
+                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nROUND DRAW!!"; 
+            } else if ((player === "PAPER" && bot === "ROCK") || (player === "ROCK" && bot === "SCISSORS") || (player === "SCISSORS" && bot === "PAPER")) {
+                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nPLAYER WON!!"; 
             } else {
-                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nROUND DRAW!!";
+                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nBOT WON!!"; 
             }
         } 
 
         console.log(compare(playerSelection, computerSelection));
-        
+
     </script>
 
 
