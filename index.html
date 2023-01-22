@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    
+
+    <script>
+
+        const plSelected = prompt("Choose Rock, Paper or Scissors","");
+        const playerSelection = plSelected.toUpperCase();
+        const computerSelection = getComputerChoice();
+           
+        // Generate bot's choice
+        function getComputerChoice() {
+
+            //Generates random number from 1 to 3
+            let choice = Math.floor(Math.random()*3) + 1;
+
+            //Converts generated number in Rock,Paper & Scissor values
+            switch(choice) {
+                case 1:
+                    return choice = "ROCK";
+                    break;
+                case 2:            
+                    return choice = "PAPER";
+                    break;
+                default:              
+                    return choice = "SCISSORS";
+            }
+        }
+        
+        function compare(player,bot) {
+            if (player === "ROCK" && bot === "PAPER") {
+                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nBOT WINS!! - Paper beats Rock";
+            } else if (player === "ROCK" && bot === "SCISSORS") {
+                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nPLAYER WINS!! - Rock beats Scissors";
+            } else if (player === "PAPER" && bot === "ROCK") {
+                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nPLAYER WINS!! - Paper beats Rock";
+            } else if (player === "PAPER" && bot === "SCISSORS") {
+                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nBOT WINS!! - Scissors beats Paper";
+            } else if (player === "SCISSORS" && bot === "ROCK") {
+                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nBOT WINS!! - Rock beats Scissors";
+            } else if (player === "SCISSORS" && bot === "PAPER") {
+                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nPLAYER WINS!! - Scissors beats Paper";
+            } else {
+                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nROUND DRAW!!";
+            }
+        } 
+
+        console.log(compare(playerSelection, computerSelection));
+        
+    </script>
+
+
+</body>
+</html>
