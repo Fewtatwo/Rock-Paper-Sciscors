@@ -2,24 +2,32 @@ let plSelected;
 let playerScore = 0;
 let botScore = 0;
      
+
     const buttons = document.querySelectorAll('button');
     const result = document.querySelector('#result_container');
+    const headline = document.querySelector('.header');
     const pResult = document.createElement('p');
             pResult.setAttribute('id', 'rPara');
     const roundCounter = document.createElement('p');
             roundCounter.setAttribute('id', 'roCounter');
-    const roComplete = document.createElement('p');
-            roComplete.setAttribute('id', 'ro_end');
+    const roComplete = document.querySelector('#headline');
+
+    // UI Improvements
+    const image = document.createElement('img');
+
+    
+           
 
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
             plSelected = button.id.toUpperCase();
+            faceOff(plSelected);
             pResult.textContent = playround(plSelected, getComputerChoice());
             roundCounter.textContent = playerScore.toString() + " " + botScore.toString();
-            roComplete.textContent = '';
+            roComplete.textContent = 'ROCK! PAPER! SCISSORS!';
             result.appendChild(pResult);
             result.appendChild(roundCounter);
-            result.appendChild(roComplete);
+            headline.appendChild(roComplete);
             if (playerScore == 5 || botScore == 5) {
                 roComplete.textContent = gameRecorder(playerScore, botScore);
                 gameRounds = 0;
@@ -27,7 +35,7 @@ let botScore = 0;
                 botScore = 0;
                 result.removeChild(pResult);
                 result.removeChild(roundCounter);
-                result.appendChild(roComplete);
+                headline.appendChild(roComplete);
             };
         });
     });
@@ -67,11 +75,27 @@ let botScore = 0;
   
     function gameRecorder(pScore, bScore) {
             if (pScore > bScore) {
-            return "-------\n**GAME ENDED**\nPlayer Wins!!\n-------";
+            return "Player Wins!!";
             } else if (pScore == bScore) {
-            return "-------\n**GAME ENDED**\nDraw!!\n-------";
+            return "Round Draw!!";
             } else {
-            return "-------\n**GAME ENDED**\nBot Wins!!\n-------";
+            return "Bot Wins!!";
             }
-    }/*  */
+    }
+
+    function faceOff(bet) {
+        if (bet == 'ROCK') {
+            image.src = 'assets/rock.png';
+            image.setAttribute('style', 'max-width: 64px; max-height: 64px; border: 1px solid pink; border-radius: 50%; background-color: rgba(238, 14, 171, .25);')
+            result.appendChild(image);
+        } else if ( bet == 'PAPER') {
+            image.src = 'assets/paper.png';
+            image.setAttribute('style', 'max-width: 64px; max-height: 64px; border: 1px solid pink; border-radius: 50%; background-color: rgba(238, 14, 171, .25);')
+            result.appendChild(image);
+        } else {
+            image.src = 'assets/scissors.png';
+            image.setAttribute('style', 'max-width: 64px; max-height: 64px; border: 1px solid pink; border-radius: 50%; background-color: rgba(238, 14, 171, .25);')
+            result.appendChild(image);
+        };
+    }
         

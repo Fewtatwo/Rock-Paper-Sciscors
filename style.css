@@ -1,5 +1,6 @@
 * {
     margin: 0;
+   
 }
 
 body {
@@ -12,21 +13,36 @@ body {
 }
 
 img {
-    max-width: 180px;
-    max-height: 180px;
+    max-width: 130px;
+    max-height: 130px;
     border-radius: 50%;
+    pointer-events: none;
+}
+
+span {
+    pointer-events: none;
 }
 
 .header {
     font-family: 'Gloria Hallelujah', Times, serif;
-    font-size: xx-large;
-    width: 100%;
-    height: 12vh;
-    padding: 3% 0 0 0;
+    font-size: 29px;
+    margin-top: 1.5%;
+    width: 50%;
+    height: 10%;
+    padding: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: hsl(259deg 59% 59% / 18%);
+    border-radius: 40%;
     
+}
+
+h1 {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .game_container {
@@ -36,28 +52,45 @@ img {
     align-items: center;
     gap: 80px;
     height: 50vh;
-    padding: 0 10%;
+    padding: 0 0 3% 0;
 }
 
-
+.rps_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Gloria Hallelujah', Times, serif;
+    font-size: larger;
+    
+}
 
 .rps_btn > button {
     display: flex;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgb(154, 8, 110);
-    width: 200px;
-    height: 200px;
+    border: 1px solid rgb(238, 14, 171);
+    background-color: rgba(238, 14, 171, .25);
+    width: 150px;
+    height: 150px;
+    transition: .3s ease;
 }
 
 .rps_btn :hover {
-    scale: 1.1;
-    border: 3px solid rgb(238, 14, 171);
-    padding: 0;
-    transition: .2s;
+    background-color: rgba(238, 56, 105, .5);
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+    transition: .2s ease;
 }
+
 
 #result_container {
     height: 10vh;
+}
+
+.bot_win {
+    color: red;
 }
