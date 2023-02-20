@@ -4,69 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    
+    <div class="header">
+        <h1>ROCK! PAPER! SCISSORS!</h1>
+    </div>
+    <div class="game_container">
+        <div class="rps_btn">
+            <button id="rock"><img src="assets/rock.png"></button>
+        </div>
+        <div class="rps_btn">
+            <button id="paper"><img src="assets/paper.png"></button>
+        </div>
+        <div class="rps_btn">
+            <button id="scissors"><img src="assets/scissors.png"></button>
+        </div>
+    </div>
+    <div id="result_container">
+    </div>
 
-    <script>
-
-        
-        let playerScore = 0;
-        let botScore = 0;   
-           
-        // Generate bot's choice
-        function getComputerChoice() {
-
-            //Generates random number from 1 to 3
-            let choice = Math.floor(Math.random()*3) + 1;
-
-            //Converts generated number in Rock,Paper & Scissor values
-            switch(choice) {
-                case 1:
-                    return choice = "ROCK";
-                    break;
-                case 2:            
-                    return choice = "PAPER";
-                    break;
-                default:              
-                    return choice = "SCISSORS";
-            }
-        }
-        
-        function playround(player,bot) {
-            if (player === bot) {
-                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nROUND DRAW!!"; 
-            } else if ((player === "PAPER" && bot === "ROCK") || (player === "ROCK" && bot === "SCISSORS") || (player === "SCISSORS" && bot === "PAPER")) {
-                playerScore++;
-                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nPLAYER WON!!"; 
-            } else {
-                botScore++;
-                return "Player Selected: " + player + "\nBot Selected: " + bot + "\nBOT WON!!"; 
-            }
-        } 
-
-        for (let i = 0; i < 5; i++) {
-            const plSelected = prompt("Choose Rock, Paper or Scissors","");
-            const playerSelection = plSelected.toUpperCase();
-            const computerSelection = getComputerChoice();
-            console.log(playround(playerSelection, computerSelection));
-            console.log("Player Score: " + playerScore);
-            console.log("Bot Score:" + botScore);
-        }
-        
-        if (playerScore > botScore) {
-            console.log("-------\n**GAME ENDED**\nPlayer Wins!!\n-------");
-        } else if (playerScore == botScore) {
-            console.log("-------\n**GAME ENDED**\nDraw!!\n-------");
-        } else {
-            console.log("-------\n**GAME ENDED**\nBot Wins!!\n-------");
-        }
-
-
-
-
-    </script>
 
 
 </body>
