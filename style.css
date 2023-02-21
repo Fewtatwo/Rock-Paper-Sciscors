@@ -1,5 +1,6 @@
 * {
     margin: 0;
+
    
 }
 
@@ -21,6 +22,11 @@ img {
 
 span {
     pointer-events: none;
+    font-family: 'Gloria Hallelujah', Times, serif;
+    font-size: large;
+    background-color: hsla(259, 59%, 59%, 0.257);
+    padding: 3px 10px;
+    border-radius: 20px;
 }
 
 .header {
@@ -61,7 +67,6 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    font-family: 'Gloria Hallelujah', Times, serif;
     font-size: larger;
     
 }
@@ -73,17 +78,26 @@ h1 {
     justify-content: center;
     border: 1px solid rgb(238, 14, 171);
     background-color: rgba(238, 14, 171, .25);
-    width: 150px;
-    height: 150px;
+    width: 86px;
+    height: 86px;
     transition: .3s ease;
+    
+}
+
+.btn_img {
+    max-width: 85px;
+    max-height: 85px;
+    border-radius: 50%;
 }
 
 .rps_btn :hover {
+    cursor: grab;
     background-color: rgba(238, 56, 105, .5);
     transform: scale(1.1);
     border-color: #ffc600;
     box-shadow: 0 0 1rem #ffc600;
     transition: .2s ease;
+
 }
 
 
@@ -93,4 +107,47 @@ h1 {
 
 .bot_win {
     color: red;
+}
+
+#face_off {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+#player, #bot {
+    max-width: 150px;
+    max-height: 150px;
+    border: 1px solid pink;
+    border-radius: 50%;
+    background-color: rgba(238, 14, 171, .25);
+}
+
+.face_off_disp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+
+}
+
+#face_off_disp_bot, #face_off_disp_player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#counter_container {
+    height: 20%;
+    margin: 0;
+    font-family: 'Gloria Hallelujah', Times, serif;
+    font-size: 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

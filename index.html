@@ -15,19 +15,34 @@
     <div class="header">
         <h1 id="headline">ROCK! PAPER! SCISSORS!</h1>
     </div>
-    <div id="result_container">
+    <div id="counter_container">
+        <p id="game_status"></p>
+    </div>
+    <div>
+        <div id="face_off">
+            <div id="face_off_disp_bot">
+                <img src="assets/robot.png" id="bot">
+                <span id="face_bot">Bot</span>
+                <span id="bot_score">--</span>
+            </div>
+            <div id="face_off_disp_player">
+                <img src="assets/player.png" id="player">
+                <span id="face_player">Player</span>
+                <span id="player_score">--</span>
+            </div>
+        </div>
     </div>
     <div class="game_container">
         <div class="rps_btn">
-            <button id="rock"><img src="assets/rock.png"></button>
+            <button id="rock"><img class="btn_img" src="assets/rock.png"></button>
             <span>Choose Rock</span>
         </div>
         <div class="rps_btn">
-            <button id="paper"><img src="assets/paper.png"></button>
+            <button id="paper"><img class="btn_img" src="assets/paper.png"></button>
             <span>Choose Paper</span>
         </div>
         <div class="rps_btn">
-            <button id="scissors"><img src="assets/scissors.png"></button>
+            <button id="scissors"><img class="btn_img" src="assets/scissors.png"></button>
             <span>Choose Scissors</span>
         </div>
     </div>
