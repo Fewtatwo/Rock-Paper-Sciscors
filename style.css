@@ -1,7 +1,5 @@
 * {
-    margin: 0;
-
-   
+    margin: 0;   
 }
 
 body {
@@ -23,7 +21,6 @@ img {
 span {
     pointer-events: none;
     font-family: 'Gloria Hallelujah', Times, serif;
-    font-size: large;
     background-color: hsla(259, 59%, 59%, 0.257);
     padding: 3px 10px;
     border-radius: 20px;
@@ -31,7 +28,7 @@ span {
 
 .header {
     font-family: 'Gloria Hallelujah', Times, serif;
-    font-size: 29px;
+    font-size: 2.3vw;
     margin-top: 1.5%;
     width: 50%;
     height: 10%;
@@ -48,6 +45,7 @@ h1 {
     display: flex ;
     justify-content: center;
     align-items: center;
+    font-size: 4vw;
 
 }
 
@@ -58,7 +56,7 @@ h1 {
     align-items: center;
     gap: 80px;
     height: 50vh;
-    padding: 0 0 3% 0;
+    padding: 0;
 }
 
 .rps_btn {
@@ -67,7 +65,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    font-size: larger;
+    font-size: small;
     
 }
 
@@ -78,11 +76,13 @@ h1 {
     justify-content: center;
     border: 1px solid rgb(238, 14, 171);
     background-color: rgba(238, 14, 171, .25);
-    width: 86px;
-    height: 86px;
+    width: 16vw;
+    height: 16vw;
+    max-width: 86px;
+    max-height: 86px;
     transition: .3s ease;
-    
 }
+
 
 .btn_img {
     max-width: 85px;
@@ -118,8 +118,6 @@ h1 {
 }
 
 #player, #bot {
-    max-width: 150px;
-    max-height: 150px;
     border: 1px solid pink;
     border-radius: 50%;
     background-color: rgba(238, 14, 171, .25);
@@ -146,7 +144,7 @@ h1 {
     height: 20%;
     margin: 0;
     font-family: 'Gloria Hallelujah', Times, serif;
-    font-size: 29px;
+    font-size: large;
     display: flex;
     justify-content: center;
     align-items: center;
